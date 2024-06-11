@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WeatherCard from "./WeatherCard";
 import FormDialog from "./OpenModal";
@@ -8,6 +8,11 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [countries, setCountries] = useState([]);
+  const [icon, setIcon] = useState("N/A"); // Initialize icon state with "N/A"
+
+  useEffect(() => {
+    console.log(icon);
+  }, [icon]);
 
   const fetchData = async (country) => {
     try {
@@ -29,7 +34,10 @@ function App() {
           humidity: response.data.main.humidity,
           wind: response.data.wind.speed,
           pressure: response.data.main.pressure,
+          icon: response.data.weather[0].icon,
         };
+        console.log(icon);
+        setIcon(response.data.weather[0].icon);
         setWeatherDataList((prevList) => [...prevList, newWeatherData]);
         setCountries((prevCountries) => [...prevCountries, country]);
       } else {
@@ -64,7 +72,9 @@ function App() {
               humidity: response.data.main.humidity,
               wind: response.data.wind.speed,
               pressure: response.data.main.pressure,
+              icon: response.data.weather[0].icon,
             };
+            console.log(country);
           } else {
             console.error("Error: Unexpected response structure");
             return null;

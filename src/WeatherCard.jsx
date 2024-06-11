@@ -9,6 +9,10 @@ function WeatherCard(props) {
               <p>{props.cloud}</p>
             </span>
           </h4>
+          <img
+            src={`https://openweathermap.org/img/wn/${props.icon}.png`}
+            alt="weather icon"
+          />
         </div>
         <div className="card-content">
           <h1>{props.feels}</h1>

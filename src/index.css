@@ -23,7 +23,7 @@ body {
 
 .card {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: aliceblue;
+  background-color: yellow;
   flex: 1 1 300px;
   min-width: 250px;
   max-width: 350px;
@@ -104,4 +104,12 @@ body {
 }
 .card-aside {
   text-align: right;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-header img {
+  width: 65px;
 }
