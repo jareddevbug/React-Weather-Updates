@@ -102,3 +102,6 @@ body {
   text-align: center;
   color: white;
 }
+.card-aside {
+  text-align: right;
+}

@@ -25,12 +25,11 @@ function App() {
         const newWeatherData = {
           country: response.data.sys.country,
           cloud: response.data.weather[0].description,
-          feels: response.data.main.feels_like,
+          feels: (response.data.main.feels_like - 273.15).toFixed(0) + "°C",
           humidity: response.data.main.humidity,
           wind: response.data.wind.speed,
           pressure: response.data.main.pressure,
         };
-
         setWeatherDataList((prevList) => [...prevList, newWeatherData]);
         setCountries((prevCountries) => [...prevCountries, country]);
       } else {
@@ -61,7 +60,7 @@ function App() {
             return {
               country: response.data.sys.country,
               cloud: response.data.weather[0].description,
-              feels: response.data.main.feels_like,
+              feels: (response.data.main.feels_like - 273.15).toFixed(0) + "°C",
               humidity: response.data.main.humidity,
               wind: response.data.wind.speed,
               pressure: response.data.main.pressure,

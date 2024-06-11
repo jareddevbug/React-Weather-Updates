@@ -15,16 +15,16 @@ function WeatherCard(props) {
 
           <div className="card-aside">
             <p>
-              feels like <span>{props.feels}</span>
+              feels like: <span>{props.feels}</span>
             </p>
             <p>
-              Humidity <span>{props.humidity}</span>
+              Humidity: <span>{props.humidity}</span>
             </p>
             <p>
-              Wind Speed <span>{props.wind}</span>
+              Wind Speed: <span>{props.wind}</span>
             </p>
             <p>
-              Pressure<span>{props.pressure}</span>
+              Pressure: <span>{props.pressure}</span>
             </p>
           </div>
         </div>
