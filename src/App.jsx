@@ -117,7 +117,13 @@ function App() {
 
       <div className="container">
         {loading ? (
-          <p>Loading...</p>
+          <p id="loading">Loading...</p>
+        ) : weatherDataList.length === 0 ? (
+          <p id="avail">
+            <strong>No data available</strong>
+            <br />
+            please add one first
+          </p>
         ) : (
           weatherDataList.map((data, index) => (
             <WeatherCard key={index} {...data} />

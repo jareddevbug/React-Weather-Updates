@@ -96,3 +96,9 @@ body {
 .card:hover {
   transform: translateY(-6px);
 }
+
+.container #loading,
+#avail {
+  text-align: center;
+  color: white;
+}
