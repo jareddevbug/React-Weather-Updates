@@ -10,7 +10,7 @@ body {
 
 .container {
   background-color: #242526;
-  min-width: 350px;
+  min-width: 300px;
   max-width: 100%;
   height: 100vh;
   margin: auto;
